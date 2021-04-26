@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <title>Document</title>
+</head>
+<body>
+
+  <h1>welcome    {%for i in welcome%} 
+    
+  {{i['firstname']}}
+  {%endfor%}</h1>
+
+    {%for i in show%} 
+    
+    <p>{{i['name']}}</p>
+  <p><a href="/edit/{{i['id']}}">Edit</a></p> <p><a href="/veiw/{{i['id']}}">view instructions</a></p> <p><a href="/delete/{{i['id']}}">Delete</a></p>
+  {%endfor%}
+
+    <a href="/addrec">create</a>
+
+    <a href="/logout">logout</a>
